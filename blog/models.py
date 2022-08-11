@@ -34,3 +34,4 @@ class Post(models.Model):
     def incrementViewCount(self):
         self.counted_view += 1
         self.save()
+        
