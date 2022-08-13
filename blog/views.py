@@ -31,7 +31,7 @@ def blog_single(request,pid):
             next=p
             break
     post.incrementViewCount()
-    context={'post':post,'posts':posts,'prev':prev,'next':next}
+    context={'post':post,'prev':prev,'next':next}
     return render(request,'blog/blog-single.html',context)
 
 
