@@ -2,7 +2,7 @@ from django.shortcuts import render,get_object_or_404
 import datetime
 from blog.models import Post
 from django.utils import timezone
-from next_prev import next_in_order, prev_in_order
+# from next_prev import next_in_order, prev_in_order
 
 # Create your views here.
 
@@ -18,10 +18,6 @@ def blog_view(request):
 def blog_single(request,pid):
     posts = Post.objects.all().order_by('-create_date')
     # default ordering
-    first = Post.objects.first()
-    second = next_in_order(first)
-    prev_in_order(second) == first # True
-    last = prev_in_order(first, loop=True)
 
     post=get_object_or_404(Post,pk=pid,status=1)
     prev=post
